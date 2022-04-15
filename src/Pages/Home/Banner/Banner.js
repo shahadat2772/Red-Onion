@@ -4,7 +4,7 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <div className="bannerImg">
-      <div className="bannerText">
+      <div className="bannerContent">
         <h1 className="text-dark mb-3">Best food waiting for your belly</h1>
         <div className="holder">
           <input

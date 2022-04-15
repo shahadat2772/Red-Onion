@@ -4,6 +4,7 @@ import logo2 from "../../../images/logo2.png";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -22,14 +23,15 @@ const Header = () => {
                   icon={faShoppingCart}
                 ></FontAwesomeIcon>
               </Nav.Link>
-              <Nav.Link style={{ fontWeight: "500" }} href="#deets">
+              <Nav.Link as={Link} to="/login" style={{ fontWeight: "500" }}>
                 Login
               </Nav.Link>
               <Nav.Link
                 style={{
                   fontWeight: "500",
                 }}
-                href="#memes"
+                as={Link}
+                to="/signup"
               >
                 SignUp
               </Nav.Link>
