@@ -1,5 +1,10 @@
 .logoContainer {
   width: 110px;
 }
-.signUpBtn {
+
+.logOutBtn {
+  border: 0;
+  background: none;
+  font-weight: 500;
+  color: gray;
 }

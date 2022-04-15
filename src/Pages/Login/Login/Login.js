@@ -1,11 +1,26 @@
+import { async } from "@firebase/util";
 import React from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import { auth } from "../../../firebase.init";
 import logo1 from "../../../images/logo2.png";
+import Loading from "../../Shared/Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const handleSubmit = (event) => {
+  // Naivgate
+  const navigate = useNavigate();
+
+  // Sign in hook
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+
+    await signInWithEmailAndPassword(email, password);
+    navigate(`/`);
   };
 
   return (
@@ -33,6 +48,9 @@ const Login = () => {
               <input className="submitButton" type="submit" value="Login" />
             </form>
           </div>
+          <Link className="formToggleBtn" to={`/signup`}>
+            Don't have an account
+          </Link>
         </div>
       </div>
     </div>

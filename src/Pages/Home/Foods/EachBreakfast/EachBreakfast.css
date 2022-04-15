@@ -1,6 +1,16 @@
 .eachMealContainer img {
   width: 220px;
 }
+
+.eachMealContainer {
+  width: 20rem;
+  padding-top: 10px;
+}
+
+.eachMealContainer:hover {
+  box-shadow: 5px 5px 15px #888888;
+}
+
 .mealName {
   text-align: center;
   font-weight: 500;

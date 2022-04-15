@@ -5,8 +5,19 @@ import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+  // Auth state hook
+  const [user] = useAuthState(auth);
+
+  // handleLogOut
+  const handleLogOut = () => {
+    signOut(auth);
+  };
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" variant="light">
@@ -17,24 +28,21 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#deets">
+              <Nav.Link as={Link} to="/cart">
                 <FontAwesomeIcon
                   className="mt-1"
                   icon={faShoppingCart}
                 ></FontAwesomeIcon>
               </Nav.Link>
-              <Nav.Link as={Link} to="/login" style={{ fontWeight: "500" }}>
-                Login
-              </Nav.Link>
-              <Nav.Link
-                style={{
-                  fontWeight: "500",
-                }}
-                as={Link}
-                to="/signup"
-              >
-                SignUp
-              </Nav.Link>
+              {user ? (
+                <button className="logOutBtn" onClick={handleLogOut}>
+                  LogOut
+                </button>
+              ) : (
+                <Nav.Link as={Link} to="/login" style={{ fontWeight: "500" }}>
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

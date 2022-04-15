@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import logo1 from "../../../images/logo2.png";
 import "./SignUp.css";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
+import { async } from "@firebase/util";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignUp = () => {
-  const handleSubmit = (event) => {
+  // Create user with email and password hook
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  // SignUP error
+  const [signUpError, setSignUpError] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     const confirmPassword = event.target.confirmPassword.value;
 
     if (password !== confirmPassword) {
+      setSignUpError("Password did not matched!");
       return;
     }
+    await createUserWithEmailAndPassword(email, password);
+    navigate(`/`);
   };
 
   return (
@@ -49,9 +65,13 @@ const SignUp = () => {
                 id="confirmPassword"
                 required
               />
+              <p className="mb-0 my-1">{signUpError && signUpError}</p>
               <input className="submitButton" type="submit" value="SignUp" />
             </form>
           </div>
+          <Link className="formToggleBtn" to={`/login`}>
+            Already have an account
+          </Link>
         </div>
       </div>
     </div>

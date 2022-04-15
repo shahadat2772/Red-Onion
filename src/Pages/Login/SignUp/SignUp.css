@@ -27,3 +27,10 @@
 .formContainer {
   margin-bottom: 80px;
 }
+
+.formToggleBtn {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(219, 0, 0, 0.788);
+}
