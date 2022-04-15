@@ -8,6 +8,7 @@ import Lunch from "./Pages/Home/Foods/Lunch/Lunch";
 import Dinner from "./Pages/Home/Foods/Dinner/Dinner";
 import SignUp from "./Pages/Login/SignUp/SignUp";
 import Login from "./Pages/Login/Login/Login";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -19,9 +20,18 @@ function App() {
           <Route path="/lunch" element={<Lunch></Lunch>}></Route>
           <Route path="/dinner" element={<Dinner></Dinner>}></Route>
         </Route>
+        <Route path="/home" element={<Home></Home>}>
+          <Route
+            path="/home/breakfast"
+            element={<Breakfast></Breakfast>}
+          ></Route>
+          <Route path="/home/lunch" element={<Lunch></Lunch>}></Route>
+          <Route path="/home/dinner" element={<Dinner></Dinner>}></Route>
+        </Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .formLogo {
   width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .inputs input {
@@ -17,13 +17,13 @@
   background-color: rgb(231, 231, 231);
 }
 
-.inputs {
-  margin-top: 20px;
-}
-
 .submitButton {
   background-color: rgba(219, 0, 0, 0.788);
   color: white;
   font-size: 14px;
   font-weight: 500;
+}
+
+.formContainer {
+  margin-bottom: 80px;
 }

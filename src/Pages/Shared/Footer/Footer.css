@@ -1,0 +1,39 @@
+.footerContainer {
+  background-color: rgb(34, 34, 34);
+}
+
+.upperFooter img {
+  width: 130px;
+}
+.upperFooter {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  padding: 40px 0px 70px 0px;
+}
+
+.upperFooter p {
+  color: rgba(255, 255, 255, 0.699);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/* Lower footer */
+.lowerFooter {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  color: rgba(255, 255, 255, 0.699);
+  padding-bottom: 40px;
+}
+
+.otherLinks p {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+}
+
+.copyRightText small {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.562);
+  font-weight: 500;
+}
