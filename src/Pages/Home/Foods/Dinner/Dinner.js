@@ -6,20 +6,28 @@ import dinner3 from "../../../../images/dinner/dinner3.png";
 import dinner4 from "../../../../images/dinner/dinner4.png";
 import dinner5 from "../../../../images/dinner/dinner5.png";
 import dinner6 from "../../../../images/dinner/dinner6.png";
+import EachDinner from "../EachDinner/EachDinner";
 
 const dinnerItems = [
-  { id: 1, name: "Salmon with", img: dinner1, price: 23.99 },
-  { id: 2, name: "", img: dinner2, price: 9.99 },
-  { id: 3, name: "", img: dinner3, price: 6.99 },
-  { id: 4, name: "", img: dinner4, price: 8.99 },
-  { id: 5, name: "", img: dinner5, price: 15.99 },
-  { id: 6, name: "", img: dinner6, price: 7.99 },
+  {
+    id: 1,
+    name: "Salmon with Grapefruit and Lenti Salad",
+    img: dinner1,
+    price: 23.99,
+  },
+  { id: 2, name: "Lemony Salmon Piccata", img: dinner2, price: 9.99 },
+  { id: 3, name: "Pork Denerlion With", img: dinner3, price: 6.99 },
+  { id: 4, name: "French Fries", img: dinner4, price: 8.99 },
+  { id: 5, name: "Garlic Butter Baked Salmon", img: dinner5, price: 15.99 },
+  { id: 6, name: "Backed Chiken", img: dinner6, price: 7.99 },
 ];
 
 const Dinner = () => {
   return (
-    <div>
-      <h3>This is dinner</h3>
+    <div className="foodContainer">
+      {dinnerItems.map((dinner) => (
+        <EachDinner key={dinner.id} meal={dinner}></EachDinner>
+      ))}
     </div>
   );
 };

@@ -14,6 +14,9 @@ const Foods = () => {
       <main className="outletContainer container">
         <Outlet></Outlet>
       </main>
+      <div className="buttonContainer">
+        <button>Checkout Your Food</button>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import lunch3 from "../../../../images/lunch/lunch3.png";
 import lunch4 from "../../../../images/lunch/lunch4.png";
 import lunch5 from "../../../../images/lunch/lunch5.png";
 import lunch6 from "../../../../images/lunch/lunch6.png";
+import EachLunch from "../EachLunch/EachLunch";
 
 const lunchItems = [
   { id: 1, name: "Healthy Meal Plan", img: lunch1, price: 23.99 },
@@ -17,7 +18,13 @@ const lunchItems = [
 ];
 
 const Lunch = () => {
-  return <div></div>;
+  return (
+    <div className="foodContainer">
+      {lunchItems.map((lunch) => (
+        <EachLunch key={lunch.id} meal={lunch}></EachLunch>
+      ))}
+    </div>
+  );
 };
 
 export default Lunch;

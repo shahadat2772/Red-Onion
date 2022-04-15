@@ -1,4 +1,5 @@
 import React from "react";
+import "./Breakfast.css";
 
 import breakfast1 from "../../../../images/breakfast/breakfast1.png";
 import breakfast2 from "../../../../images/breakfast/breakfast2.png";
@@ -6,6 +7,8 @@ import breakfast3 from "../../../../images/breakfast/breakfast3.png";
 import breakfast4 from "../../../../images/breakfast/breakfast4.png";
 import breakfast5 from "../../../../images/breakfast/breakfast5.png";
 import breakfast6 from "../../../../images/breakfast/breakfast6.png";
+
+import EachBreakfast from "../EachBreakfast/EachBreakfast";
 
 const breakfastItems = [
   { id: 1, name: "Bagel and cream chees", img: breakfast1, price: 23.99 },
@@ -22,7 +25,13 @@ const breakfastItems = [
 ];
 
 const Breakfast = () => {
-  return <div className="foodContainer"></div>;
+  return (
+    <div className="foodContainer">
+      {breakfastItems.map((breakfast) => (
+        <EachBreakfast key={breakfast.id} meal={breakfast}></EachBreakfast>
+      ))}
+    </div>
+  );
 };
 
 export default Breakfast;
