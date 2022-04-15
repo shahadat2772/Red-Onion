@@ -1,15 +1,19 @@
 import React from "react";
 import Breakfast from "../Breakfast/Breakfast";
 import Dinner from "../Dinner/Dinner";
+import FoodsNav from "../FoodsNav/FoodsNav";
+import "./Foods.css";
 
 import Lunch from "../Lunch/Lunch";
+import { Outlet } from "react-router-dom";
 
 const Foods = () => {
   return (
-    <div>
-      <Breakfast></Breakfast>
-      <Lunch></Lunch>
-      <Dinner></Dinner>
+    <div className="foodsContainer ">
+      <FoodsNav></FoodsNav>
+      <main className="outletContainer container">
+        <Outlet></Outlet>
+      </main>
     </div>
   );
 };
