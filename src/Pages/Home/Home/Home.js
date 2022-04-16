@@ -21,9 +21,31 @@ const Home = () => {
     }
   };
 
+  const increaseItemQuantity = (id) => {
+    const item = cart.find((meal) => meal.id === id);
+    item.quantity += 1;
+  };
+  const decreaseItemQuantity = (id) => {
+    const item = cart.find((meal) => meal.id === id);
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+    } else {
+      const restItems = cart.filter((meal) => meal.id !== id);
+      setCart([...restItems]);
+    }
+  };
+
   return (
     <div>
-      <CartContext.Provider value={{ cart, setCart, handleAddToCart }}>
+      <CartContext.Provider
+        value={{
+          cart,
+          setCart,
+          handleAddToCart,
+          increaseItemQuantity,
+          decreaseItemQuantity,
+        }}
+      >
         <Banner></Banner>
         <Foods></Foods>
       </CartContext.Provider>

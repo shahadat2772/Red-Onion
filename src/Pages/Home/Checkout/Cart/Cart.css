@@ -1,0 +1,43 @@
+.cartContainer {
+  width: 290px;
+}
+
+.cartDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderBtn {
+  border: 0;
+  width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(170, 170, 170, 0.555);
+  font-weight: 500;
+}
+
+.subtotal {
+  font-weight: 500;
+  font-size: 15px;
+}
+.tax {
+  font-weight: 500;
+  font-size: 15px;
+}
+.delivery {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.total {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.ItemsContainer {
+  max-height: 220px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
