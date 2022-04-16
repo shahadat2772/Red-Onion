@@ -4,9 +4,11 @@ import Dinner from "../Dinner/Dinner";
 import FoodsNav from "../FoodsNav/FoodsNav";
 import "./Foods.css";
 import Lunch from "../Lunch/Lunch";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Foods = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="foodsContainer ">
       <FoodsNav></FoodsNav>
@@ -14,7 +16,9 @@ const Foods = () => {
         <Outlet></Outlet>
       </main>
       <div className="buttonContainer">
-        <button>Checkout Your Food</button>
+        <button onClick={() => navigate(`/checkout`)}>
+          Checkout Your Food
+        </button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import Dinner from "./Pages/Home/Foods/Dinner/Dinner";
 import SignUp from "./Pages/Login/SignUp/SignUp";
 import Login from "./Pages/Login/Login/Login";
 import Footer from "./Pages/Shared/Footer/Footer";
-import Checkout from "./Pages/Checkout/Checkout/Checkout";
+import Checkout from "./Pages/Home/Checkout/Checkout/Checkout";
 
 function App() {
   return (
@@ -17,9 +17,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}>
+          <Route index="/breakfast" element={<Breakfast></Breakfast>}></Route>
           <Route path="/breakfast" element={<Breakfast></Breakfast>}></Route>
           <Route path="/lunch" element={<Lunch></Lunch>}></Route>
           <Route path="/dinner" element={<Dinner></Dinner>}></Route>
+          <Route path="/checkout" element={<Checkout></Checkout>}></Route>
         </Route>
         <Route path="/home" element={<Home></Home>}>
           <Route

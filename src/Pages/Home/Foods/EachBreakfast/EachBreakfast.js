@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./EachBreakfast.css";
+import { CartContext } from "../../Home/Home";
 
 const EachBreakfast = ({ meal }) => {
-  const addToCart = (meal) => {
-    console.log(meal);
-  };
+  const { cart, setCart, handleAddToCart } = useContext(CartContext);
 
   const { img, name, price } = meal;
   return (
-    <div onClick={() => addToCart(meal)} className="eachMealContainer mx-auto">
+    <div
+      onClick={() => handleAddToCart(meal)}
+      className="eachMealContainer mx-auto"
+    >
       <div className="img text-center">
         <img src={img} alt="" />
       </div>

@@ -9,12 +9,12 @@ import lunch6 from "../../../../images/lunch/lunch6.png";
 import EachLunch from "../EachLunch/EachLunch";
 
 const lunchItems = [
-  { id: 1, name: "Healthy Meal Plan", img: lunch1, price: 23.99 },
-  { id: 2, name: "Fried Chicken Bento", img: lunch2, price: 9.99 },
-  { id: 3, name: "Tarragon-Rubbed-Salmon", img: lunch3, price: 6.99 },
-  { id: 4, name: "Indian Lunch", img: lunch4, price: 8.99 },
-  { id: 5, name: "Beef Steak", img: lunch5, price: 15.99 },
-  { id: 6, name: "Honey-Soy-Glazed-Salmon", img: lunch6, price: 7.99 },
+  { id: "lunch1", name: "Healthy Meal Plan", img: lunch1, price: 23.99 },
+  { id: "lunch2", name: "Fried Chicken Bento", img: lunch2, price: 9.99 },
+  { id: "lunch3", name: "Tarragon-Rubbed-Salmon", img: lunch3, price: 6.99 },
+  { id: "lunch4", name: "Indian Lunch", img: lunch4, price: 8.99 },
+  { id: "lunch5", name: "Beef Steak", img: lunch5, price: 15.99 },
+  { id: "lunch6", name: "Honey-Soy-Glazed-Salmon", img: lunch6, price: 7.99 },
 ];
 
 const Lunch = () => {

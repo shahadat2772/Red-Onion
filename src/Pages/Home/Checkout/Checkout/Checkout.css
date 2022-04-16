@@ -1,0 +1,13 @@
+.checkoutContainer {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.cartContainer {
+  margin: 20px auto;
+}
+
+.shippingContainer {
+  margin: 20px auto;
+}
