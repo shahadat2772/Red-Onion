@@ -22,7 +22,7 @@ const Cart = () => {
     <div className="cartContainer">
       <div className="ItemsContainer">
         {cart.map((meal) => (
-          <CartItem meal={meal}></CartItem>
+          <CartItem key={meal.id} meal={meal}></CartItem>
         ))}
       </div>
       <div className="cartInfo">

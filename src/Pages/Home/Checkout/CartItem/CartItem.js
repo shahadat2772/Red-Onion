@@ -4,10 +4,11 @@ import { CartContext } from "../../Home/Home";
 
 const CartItem = ({ meal }) => {
   const { img, name, price, quantity, id } = meal;
-  console.log(meal);
 
   const { increaseItemQuantity, decreaseItemQuantity } =
     useContext(CartContext);
+
+  console.log(increaseItemQuantity, decreaseItemQuantity);
 
   return (
     <div className="cartItemContainer d-flex">

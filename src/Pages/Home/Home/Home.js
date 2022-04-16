@@ -22,6 +22,7 @@ const Home = () => {
   };
 
   const increaseItemQuantity = (id) => {
+    console.log("Clicked");
     const item = cart.find((meal) => meal.id === id);
     item.quantity += 1;
   };
