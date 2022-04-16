@@ -34,6 +34,9 @@ const Header = () => {
                   icon={faShoppingCart}
                 ></FontAwesomeIcon>
               </Nav.Link>
+              <Nav.Link style={{ fontWeight: "500" }} as={Link} to="/home">
+                Home
+              </Nav.Link>
               {user ? (
                 <button className="logOutBtn" onClick={handleLogOut}>
                   LogOut

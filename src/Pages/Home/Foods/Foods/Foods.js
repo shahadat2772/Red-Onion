@@ -3,7 +3,6 @@ import Breakfast from "../Breakfast/Breakfast";
 import Dinner from "../Dinner/Dinner";
 import FoodsNav from "../FoodsNav/FoodsNav";
 import "./Foods.css";
-
 import Lunch from "../Lunch/Lunch";
 import { Outlet } from "react-router-dom";
 
